@@ -12,7 +12,7 @@ router.use('/', middleware);
 
 
 router.post('/upload',upload.single('file'), uploadFileController.uploadFiles);
-router.post('/getAllFiles', getAllFiles.getFiles);
-router.post('/deleteFile', deleteFileController.deleteFile);
+router.get('/getAllFiles', getAllFiles.getFiles);
+router.delete('/deleteFile', deleteFileController.deleteFile);
 
 module.exports = router;
