@@ -13,7 +13,7 @@ const upload = multer({ dest: 'uploads/' });
 router.use('/', middleware);
 
 
-router.post('/upload',upload.single('file'), uploadFileController.uploadFiles);
+router.post('/upload',upload.array('file'), uploadFileController.uploadFiles);
 router.get('/getAllFiles', getAllFiles.getFiles);
 router.delete('/deleteFile', deleteFileController.deleteFile);
 router.post('/assignPermission', assignPermissionController.assignPermission);
